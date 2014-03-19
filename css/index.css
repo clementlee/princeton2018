@@ -1,3 +1,60 @@
 body {
 	text-rendering:optimizeLegibility;
+	margin:0;
+	padding:0;
+}
+
+#header {
+	width:100%;
+	height:100px;
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	font-family:"Oswald", sans-serif;
+	font-weight:300;
+	font-size: 50px;
+}
+
+#headtext {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#container {
+	width:80%;
+	color:white;
+	margin:0 auto;
+	padding:0;
+}
+
+.item {
+	width:200px;
+	height:200px;
+	float:left;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:1px solid rgb(245, 128, 37);
+	background-color:rgba(201,201,201,0.8);
+	font-size:30px;
+}
+
+.item.smsq {
+	width:200px;
+	height:200px;
+}
+
+.item.bgsq {
+	width:400px;
+	height:400px;
+}
+
+.item.wdrt {
+	width:400px;
+	height:200px;
+}
+
+.item.lgrt {
+	width:200px;
+	height:400px;
 }
