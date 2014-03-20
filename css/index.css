@@ -1,9 +1,10 @@
 body {
 	text-rendering:optimizeLegibility;
 	margin:0;
-	padding:0;
+	padding:0 50px;
 	background-color:black;
 	color:white;
+	min-width: 600px;
 }
 
 #header {
@@ -31,6 +32,9 @@ body {
 
 .item {
 	float:left;
+	/*default values -- to be overriden */
+	width: 100px;
+	height: 100px;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -43,8 +47,8 @@ body {
 }
 
 .item.smsq {
-	width:200px;
-	height:200px;
+	width:250px;
+	height:250px;
 }
 
 .item.bgsq {
@@ -63,7 +67,7 @@ body {
 }
 
 #container strong {
-	font-weight:400;
+	font-weight:300;
 }
 
 #footer {
