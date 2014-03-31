@@ -24,21 +24,25 @@
 			});*/
 			$(document).ready(function() {
 				$('#header').css('margin-top', ($(window).height() - $('#header').height()) / 2);
-				$('#header').delay(0).animate({'margin-top': '0px', 'width':'100%', duration:1000, queue:false}, function() {$('#container').fadeIn({duration:1000, queue:false});
-					$('#footer').fadeIn({duration:1000, queue:false});});
-				$('#navgroup').delay(0).fadeIn({duration:1000, queue:false} )
-				.promise()
-				.done(function(){
-					$('#headtext').click(function() {
-						$('.item').show();
-						$('#container').masonry('layout');
+				$('#header').delay(2000).promise().done(function() {
+					$('#headtext').text('Princeton 2018');
+					$('#header').animate({'margin-top': '0px', 'width':'100%', duration:3000, queue:false}, function() {
+						$('#container').fadeIn({duration:2000, queue:false});
+						$('#footer').fadeIn({duration:2000, queue:false});
 					});
-					$('#arts').click(function(){
-						$('.dance').toggle();
-						$('#container').masonry('layout');
+					$('#navgroup').fadeIn({duration:500, queue:false} )
+					.promise()
+					.done(function(){
+						$('#headtext').click(function() {
+							$('.item').show();
+							$('#container').masonry('layout');
+						});
+						$('#arts').click(function(){
+							$('.dance').toggle();
+							$('#container').masonry('layout');
+						});
 					});
 				});
-
 			});
 			$(document).ready(function() {$('.year').text( (new Date).getFullYear());});
 			/*$(document).ready(function() {$('.hdr').css('width',$('body').width());$('#container').masonry('layout');});
@@ -73,8 +77,6 @@
 				<iframe width="398" height="224" src="//www.youtube.com/embed/w-XO4XiRop0" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="item lgrt"></div>
-			<div class="item hdr">you want to see some arts? we've got you covered. </div>
-			<div class="item hdr">you want to see some arts? we've got you covered. </div>
 			<div class="item hdr">you want to see some arts? we've got you covered. </div>
 		</div>
 		<div id="footer">
