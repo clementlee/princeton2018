@@ -29,6 +29,7 @@ body {
 }
 
 .navbutt {
+	cursor:pointer;
 	font-size:35px;
 	padding-left:10px;
 	padding-right:10px;
@@ -42,6 +43,7 @@ body {
 }
 
 #headtext {
+	cursor:pointer;
 	color:rgb(245,128,37);
 	padding-left:10px;
 	padding-right:10px;
@@ -65,9 +67,9 @@ body {
 
 .item {
 	float:left;
-	/*default values -- to be overriden */
+	/*default values -- to be overriden
 	width: 100px;
-	height: 100px;
+	height: 100px;*/
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -77,6 +79,11 @@ body {
 	font-weight:100;
 	font-size:30px;
 	padding:30px;
+}
+
+.item:hover {
+	border:1px solid #fff;
+	z-index:5000;
 }
 
 .item.smsq {
@@ -105,8 +112,22 @@ body {
 	height:100px;
 }
 
-.dance {
+.lingo {
+	width:400px;
+	overflow:auto;
+	font-size:18px;
 	display:none;
+}
+
+.blog {
+	width:800px;
+	overflow:auto;
+	font-size:18px;
+	display:none;
+}
+
+.blog .headtext {
+	font-size:24px;
 }
 
 #container strong {

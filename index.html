@@ -3,8 +3,9 @@
 	<head>
 		<title>Princeton2018</title>
 		<link href="css/index.css" type="text/css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,100" rel="stylesheet" type="text/css">
+		<link href="img/icon.png" rel="icon" type="image/png">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
 		<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
@@ -18,15 +19,18 @@
 					$('#container').masonry('reloadItems');
 				});
 			});
-			/*$(document).ready(function(){
-				$('.dance').show();
-				$('#container').masonry('layout');
-			});*/
+			function reset() {
+				$('.item').show();
+				$('.lingo').hide();
+				$('.blog').hide();
+			}
+			lingoactive=false;
+			blogactive=false;
 			$(document).ready(function() {
 				$('#header').css('margin-top', ($(window).height() - $('#header').height()) / 2);
 				$('#header').delay(2000).promise().done(function() {
 					$('#headtext').text('Princeton 2018');
-					$('#header').animate({'margin-top': '0px', 'width':'100%', duration:3000, queue:false}, function() {
+					$('#header').animate({'margin-top': '0px', 'width':'100%', duration:5000, queue:false}, function() {
 						$('#container').fadeIn({duration:2000, queue:false});
 						$('#footer').fadeIn({duration:2000, queue:false});
 					});
@@ -34,23 +38,35 @@
 					.promise()
 					.done(function(){
 						$('#headtext').click(function() {
-							$('.item').show();
+							reset();
 							$('#container').masonry('layout');
 						});
-						$('#arts').click(function(){
-							$('.dance').toggle();
+						$('#lingo').click(function(){
+							if(lingoactive) {
+								reset();
+							}
+							else {
+								$('.item').hide();
+								$('.lingo').show();
+							}
+							lingoactive = !lingoactive;
+							$('#container').masonry('layout');
+						});
+						$('#blog').click(function() {
+							if(blogactive) {
+								reset();
+							}
+							else {
+								$('.item').hide();
+								$('.blog').show();
+							}
+							lingoactive = !lingoactive;
 							$('#container').masonry('layout');
 						});
 					});
 				});
 			});
 			$(document).ready(function() {$('.year').text( (new Date).getFullYear());});
-			/*$(document).ready(function() {$('.hdr').css('width',$('body').width());$('#container').masonry('layout');});
-			$( 'body').resize(function() {$('.hdr').css('width',$('body').width());$('#container').masonry('layout');});*/
-			//$('.navbutt').click(function() {alert("hi");$('.dance').show(); $('#container').masonry('layout');});
-			/*$(document).ready(function(){ //fade effect
-				$("body").hide(0).fadeIn(2018);
-			});*/
 		</script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="description" content="Welcome admitted class of 2018!">
@@ -61,7 +77,8 @@
 				Welcome Princeton Class of 2018
 			</span>
 			<div id="navgroup">
-				<span class="navbutt" id="arts">arts</span>
+				<span class="navbutt" id="blog">blog</span>
+				<span class="navbutt" id="lingo">lingo</span>
 				<span class="navbutt" id="clubs">clubs</span>
 			</div>
 		</div>
@@ -70,7 +87,80 @@
 				Hey, what's up. You just got into <strong>Princeton.</strong> And that's pretty awesome. We want to show you what it's like here. Let's give you
 				<strong>a view of Princeton, by Princeton students.</strong>
 			</div>
-			<div class="item smsq dance" id="lol">We have blank. We have blank. And we have blank.</div>
+			<div class="item lingo"><strong>Beast</strong> (n) <br>
+				the beer Eating Clubs typically have on tap. Not so good you'll ever crave or miss it, but not so bad you'll mind it. 
+				Plus, free makes anything taste better.
+			</div>
+			<div class="item lingo"><strong>Eating Clubs</strong> (n) <br>
+				10 social organizations housed in separate buildings on Prospect Ave (The Street) with exclusively upperclassmen membership. 
+				Clubs provide 'meal plans' for members, as well as a variety of other social and engagement opportunities. 
+				They typically host parties at night (Thurs/Sat are popular nights) that are available to Princeton students - 
+				either through members or simply with your Princeton ID
+			</div>
+			<div class="item lingo"><strong>Fire Inspection</strong> (n) <br>
+				Twice a semester rooms are quickly inspected for fire-code violations.
+			</div>
+			<div class="item lingo"><strong>Late Meal</strong> (n) <br>
+				A time in which students can grab a late lunch or late dinner in Frist Campus Center using a meal swipe.
+			</div>
+			<div class="item lingo"><strong>McCosh</strong> (n) <br>
+				1. University Health Services building, located near Frist.
+				2. building that runs parallel the University Chapel and contains classrooms, lecture halls and offices.
+			</div>
+			<div class="item lingo"><strong>RCA</strong> (n) <br>
+				short for Residential College Adviser. This junior or senior lives near you. Will host study breaks and attend various orientation events with you.
+			</div>
+			<div class="item lingo"><strong>Reading Period</strong> (n) <br>
+				a 9-day period immediately preceding the period of Final Exams each semester when classes are typically not scheduled to allow for exam preparation
+				and completing written work which is due on the final day of the Reading Period.
+				NOTE: Midterms do not have a reading period preceding them.
+			</div>
+			<div class="item lingo"><strong>Pass</strong> (n) <br>
+				a business card sized slip issued by an Eating Club so that non-members can gain access for a night out. 
+				Each club has their own pass policy and design, but you'll figure it all out quickly.
+			</div>
+			<div class="item lingo"><strong>PDF</strong> (v) <br>
+				short for "Pass, D, or Fail," this is a grading option students can elect when taking a course. 
+				Instead of a letter grade on your transcript you get a P (pass), D, or F. Students can elect the PDF grading option for up to 4 classes 
+				through their Princeton careers. You cannot PDF more than one class per semester and you cannot PDF courses that fulfill your concentration requirements.
+				Students often elect PDF when taking 5 courses or when fulfilling distribution requirements.
+			</div>
+			<div class="item lingo"><strong>Pequod</strong> (n) <br>
+				A course packet designed by a professor for a specific course that can be purchased, if part of the syllabus, on campus at the U-Store.
+			</div>
+			<div class="item lingo"><strong>Precept</strong> (n)<br>
+				1. group of 10-15 students in a class who meet once a week to discuss the course readings and lectures.<br>
+				2. A place where certain students make verbose claims; don't be intimidated and speak up!
+			</div>
+			<div class="item lingo"><strong>Prox</strong> (n/v)<br>
+				1. the Princeton ID, PUID, or Tiger Card. This card gets you into buildings, counts for meals at the dining halls and Frist, and gets you into the Eating Clubs. <br>
+				2.  "to prox", to swipe one's card past a sensor to unlock a door.
+				After hours, you may not prox into certain buildings unless you are taking a class in that building or a member of that particular department.
+			</div>
+			<div class="item lingo"><strong>RCA</strong> (n) <br>
+				short for Residential College Adviser. This junior or senior lives near you. Will host study breaks and attend various orientation events with you.
+			</div>
+			<div class="item lingo"><strong>The Street</strong> (n) <br>
+				Prospect Avenue, where the ten eating clubs are located
+			</div>
+			<div class="item lingo"><strong>Zee Group</strong> (n) <br>
+				short for Advisee Group. These are the fifteen to twenty students who live near you and share the same RCA.
+			</div>
+
+			<div class="item blog">
+				<span class="headtext"><strong>This is a blog post!</strong></span><br>
+				Apr 4, 2014
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod convallis suscipit. In lacus arcu, gravida vel hendrerit id, laoreet quis orci. Fusce sodales mi nisl, eget consequat massa congue vitae. Vestibulum sed lobortis sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et odio velit. Etiam nunc magna, iaculis vitae venenatis id, sagittis ac mauris. Vivamus rhoncus nibh in adipiscing convallis. Sed non vehicula ipsum, eget ultricies justo. Vivamus non nisi semper velit malesuada rhoncus eu quis leo. Suspendisse lacinia aliquam enim, varius gravida quam lacinia eget. Cras lobortis arcu sit amet lectus varius, et porta nibh fermentum. Quisque nec vestibulum libero. Donec euismod sodales consequat. Integer consequat mi nec malesuada varius.</p>
+
+				<p>Nam vestibulum leo non ipsum tristique sollicitudin. Mauris accumsan massa et ipsum porta porta nec quis elit. Proin tempor neque turpis, consectetur commodo massa mattis in. Vivamus adipiscing scelerisque orci, at faucibus mauris egestas sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam a tellus ac magna lobortis sodales a in turpis. Vivamus facilisis arcu ligula, dapibus tincidunt augue semper id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent sagittis non est quis imperdiet.</p>
+
+				<p>In lacinia leo sed purus aliquet, vel tempus sapien sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique augue magna, id dictum massa pretium sit amet. Maecenas in dui vitae enim molestie eleifend id ultricies quam. Quisque iaculis libero quis nulla porta, vulputate luctus neque luctus. Vestibulum turpis metus, vestibulum a vulputate id, ultricies vel augue. Vestibulum volutpat laoreet vestibulum. Etiam non lacinia urna, ut tristique purus. Curabitur non dapibus lectus. Fusce pharetra venenatis lacus, sed feugiat tellus ornare non. Maecenas sollicitudin lacinia augue non elementum. Suspendisse convallis auctor eros, consectetur scelerisque nunc venenatis eget. Praesent non ullamcorper libero. Vestibulum magna augue, ornare vel consequat non, consectetur ac metus. Donec convallis vitae diam at lobortis. Phasellus vel dolor nunc.</p>
+
+				<p>Donec leo ipsum, porta eu tellus ac, viverra luctus enim. Donec varius orci vel nisi sollicitudin imperdiet. Duis lobortis elit lectus, quis malesuada est vulputate vitae. Fusce et aliquet neque. Aenean scelerisque nibh ipsum, vel mattis metus porta non. Mauris ornare odio non magna sagittis interdum. Maecenas a nulla et mauris interdum volutpat. Vivamus in ultricies leo, quis ultricies massa. Morbi vel fermentum dolor. Donec sollicitudin, justo ut scelerisque tristique, sem ligula elementum lacus, nec viverra justo mauris in risus. Mauris eu nulla quis ligula placerat ultrices. Nulla metus nulla, tincidunt vitae libero ac, tincidunt blandit nibh. Ut pulvinar sed ante quis posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis commodo sit amet est nec lacinia. Morbi justo urna, gravida eget porttitor id, consectetur et nulla.</p>
+
+				<p>Duis quam felis, cursus eget faucibus aliquet, consectetur et magna. Vivamus ultricies turpis sed interdum vehicula. Nulla sodales elit ligula, eu laoreet purus imperdiet gravida. Duis a dui non justo dapibus ultricies et eu tellus. Quisque ac neque et magna pharetra condimentum. Praesent sit amet quam euismod magna gravida sodales et in lectus. Nunc semper dignissim tortor a imperdiet. Nulla laoreet adipiscing lorem eget vehicula. Quisque sit amet convallis tortor, eu fringilla justo.</p>
+			</div>
 			<div class="item lgrt"></div>
 			<div class="item bgsq" style="padding:0">
 				Check out this awesome trailer!<br>
